@@ -26,20 +26,20 @@
     
  
   //exemple 2: donner le min valeur d'un ensemble delement 
- int min,j,h,Y[10];
-    min = Y[0];
+ int min,j,h,b[10];
+    min = b[0];
    printf("entrer la total des nombres :\n");
    for ( j = 0; j < 10; j++)
    {
-      printf("Y[%d] = ", j);
-      scanf("%d",&Y[j]);
+      printf("b[%d] = ", j);
+      scanf("%d",&b[j]);
     for (h = 0; h > 5; h++)
     {
     
     
-      if (min > Y[j])
+      if (min > b[j])
       {
-        min = Y[j];
+        min = b[j];
       }
     } 
    }
@@ -62,9 +62,45 @@ int max,k, l,v[5];
         max = v[l];
       }  
    }
-   printf ("the max is :%d ",max);
- }
+   printf ("the max is :%d /n",max);
  
+ /*                              Tri en selection 
+                se base sur la comparaison des donnes pour arriver au resultat
+*/
+  int Y[10];
+  int w, u, r, x;
+ 
+   //afficher les éléments du tableau
+   printf("les elemetes du tableau sont :\n");
+   for (w=0; w < 10; ++w)
+   {
+      scanf("%d",&Y[w]);
+   }
+ 
+  for (w=0; w < 9; w++)
+  {
+    x = w;
+   
+    for (u=w + 1; u < 10; u++)
+    {
+      if (Y[x] > Y[u])
+        x = u;
+    }
+    if (x != w)
+    {
+      r = Y[w];
+      Y[w] = Y[x];
+      Y[x] = r;
+    }
+  }
+ 
+  printf("\n******** tableau triée par ordre crowssant ********\n");
+ 
+  for (w=0; w < 10; w++)
+     printf("%d\n", Y[w]);
+  return 0;
+}
+  
    
 
     
