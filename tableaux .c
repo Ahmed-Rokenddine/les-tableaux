@@ -66,6 +66,7 @@ int max,k, l,v[5];
  
  /*                              Tri en selection 
                 se base sur la comparaison des donnes pour arriver au resultat
+                             Tableau croissant
 */
   int Y[10];
   int w, u, r, x;
@@ -94,7 +95,41 @@ int max,k, l,v[5];
     }
   }
  
-  printf("\n******** tableau triée par ordre crowssant ********\n");
+  printf("\n******** tableau triée par ordre croissant ********\n");
+ 
+  for (w=0; w < 10; w++)
+     printf("%d\n", Y[w]);
+  return 0;
+
+  //                    Tableau decroissant 
+    int Y[10];
+  int w, u, r, x;
+ 
+   //afficher les éléments du tableau
+   printf("les elemetes du tableau sont :\n");
+   for (w=0; w < 10; ++w)
+   {
+      scanf("%d",&Y[w]);
+   }
+ 
+  for (w=0; w < 9; w++)
+  {
+    x = w;
+   
+    for (u=w + 1; u < 10; u++)
+    {
+      if (Y[x] <  Y[u])
+        x = u;
+    }
+    if (x != w)
+    {
+      r = Y[w];
+      Y[w] = Y[x];
+      Y[x] = r;
+    }
+  }
+ 
+  printf("\n******** tableau triée par ordre decroissant ********\n");
  
   for (w=0; w < 10; w++)
      printf("%d\n", Y[w]);
