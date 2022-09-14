@@ -195,6 +195,65 @@ int max,k, l,v[5];
     }
     
  }
+                                                                    recherche par dichotomique
+     int main(){
+    int i,tmp,x,start,end,mid,a;
+     printf("combien de case voulez vous ?:\n");
+     scanf("%d",&x);
+     int f[x];
+     printf("Donner la totalite des nombres:\n");
+      for ( i = 0; i <x ; i++)
+      {
+        scanf("%d",&f[i]);
+     
+     }
+     printf("le tri en ordre croissant sera:\n");
+     
+    for ( int j = 0; j <=x-1 ; j++)
+    {
+        while (f[j]>0 && f[j-1]>f[j])
+        {
+         tmp=f[j];
+         f[j]=f[j-1];
+         f[j-1]=tmp;
+
+         j--;
+        }
+    }
+    for ( int k = 0; k < x ; k++)
+    {
+      printf("%d\n",f[k]);
+    }
+     printf("saisisser votre recherche :");
+     scanf("%d",&a);
+ start=0;
+ end=x-1;
+ mid=(end-start)/2;
+        while  (f[mid]!=a )
+   {
+      if (f[mid]>a)
+      {
+         end=mid-1;
+      }
+    else
+       start=mid+1;
+
+    }
+   if (f[mid]==a)
+  {
+    
+    printf("l'element se trouve parmi les resultat");
+  }
+  else if (f[mid]!=a)
+  {
+   printf("l'element est introuvable");
+  }
+  
+   
+  return 0;
+  
+ }
+
     */
   return 0;
 }
