@@ -133,9 +133,68 @@ int max,k, l,v[5];
  
   for (w=0; w < 10; w++)
      printf("%d\n", Y[w]);
+
+     /*            Tri par bull
+     int i,tmp,x;
+     printf("combien de case voulez vous ?:\n");
+     scanf("%d",&x);
+     int f[x];
+     printf("Donner la totalite des nombres:\n");
+      for ( i = 0; i <x ; i++)
+      {
+        scanf("%d",&f[i]);
+     
+     }
+     int k;
+    for ( i = 0; i <x-1 ; i++)
+    {
+         for ( k = 0; k <x-1 ; k++)
+       {
+        if (f[k]>=f[k+1])
+        {
+            tmp=f[k];
+            f[k]=f[k+1];
+            f[k+1]=tmp;
+         }
+       }
+    }
+    for ( int j = 0; j <x ; j++)
+    printf("%d\n",f[j]);
+*/
+
+/*              tri par insertion
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+ int main(){
+    int i,tmp,x;
+     printf("combien de case voulez vous ?:\n");
+     scanf("%d",&x);
+     int f[x];
+     printf("Donner la totalite des nombres:\n");
+      for ( i = 0; i <x ; i++)
+      {
+        scanf("%d",&f[i]);
+     
+     }
+     
+    for ( int j = 0; j <=x-1 ; j++)
+    {
+        while (f[j]>0 && f[j-1]>f[j])
+        {
+         tmp=f[j];
+         f[j]=f[j-1];
+         f[j-1]=tmp;
+
+         j--;
+        }
+    }
+    for ( int k = 0; k < x ; k++)
+    {
+      printf("%d\n",f[k]);
+    }
+    
+ }
+    */
   return 0;
 }
-  
-   
-
-    
