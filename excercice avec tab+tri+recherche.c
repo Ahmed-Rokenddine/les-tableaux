@@ -44,22 +44,29 @@
      scanf("%d",&r);
 
     int start=0;
+
     int end=n;
+
     int mid=(end+start)/2;
+    
     while(tab[mid]!=r && start <= end){
+      
       if (tab[mid]>r)
          {
          end=mid-1;
          mid=(start+end)/2;
          }
+    
      else 
        start=mid+1;
        mid=(start+end)/2;
     }
+   
    if (tab[mid]==r)
    {
     printf("l'element se trouve parmi les resultat");
    }
+    
     else printf("l'element est introuvable"); 
    
    return 0;     
